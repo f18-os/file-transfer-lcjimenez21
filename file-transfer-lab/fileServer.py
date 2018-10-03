@@ -49,8 +49,8 @@ while True:
         fileName = payload.decode()
         payload = framedReceive(sock)
         path = (newPath +'/'+ fileName)
-        print(path)
-        out_file = open(path, "wb+") # open for [w]riting as [b]inary
+        # print(path) debug tool
+        out_file = open(path, "wb+") #[w]rite as [b]inary
         out_file.write(payload)
         out_file.close()
         framedSend(sock, payload, 1)
